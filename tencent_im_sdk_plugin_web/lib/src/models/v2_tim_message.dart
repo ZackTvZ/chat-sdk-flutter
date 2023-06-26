@@ -167,7 +167,7 @@ class V2TIMMessage {
     if (elementType == MessageElemType.V2TIM_ELEM_TYPE_VIDEO) {
       final videoElem = V2TimVideoElem(
           videoPath: messagePayload['videoUrl'],
-          duration: messagePayload['videoSecond'],
+          duration: messagePayload['videoSecond'] is int ? messagePayload['videoSecond'] : 0,
           UUID: messagePayload['videoUUID'],
           snapshotPath: messagePayload['thumbUrl'],
           snapshotUUID: messagePayload['thumbUUID'],
